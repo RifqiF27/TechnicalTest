@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { LiaWindowCloseSolid } from "react-icons/lia";
 
 export default function CreateProduct({ visible, onClose }) {
   const [input, setInput] = useState({
@@ -38,10 +37,9 @@ export default function CreateProduct({ visible, onClose }) {
     }
   };
 
-
   return (
     <>
-      
+      <div>ADD FORM</div>
     </>
   );
 }

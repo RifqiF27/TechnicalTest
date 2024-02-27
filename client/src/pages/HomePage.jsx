@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const [products, setProducts] = useState([]);
@@ -59,21 +60,21 @@ const HomePage = () => {
 
   return (
     <>
-      <div>
+      <div style={{ margin: "15px" }}>
         <div style={{ marginBottom: "10px" }}>
           <input placeholder="Search..." onChange={handleSearch}></input>
-          <button type="button" onClick={handleSubmitSearch}>
+          <button  type="button" onClick={handleSubmitSearch}>
             Search
           </button>
         </div>
         <div>
-          <button
+          <Link to={"/addProduct"}
             style={{
               margin: "10px",
             }}
           >
             Add
-          </button>
+          </Link>
         </div>
         {!loading && products.length === 0 && <p>product tidak ditemukan</p>}
         {loading ? (
@@ -96,8 +97,13 @@ const HomePage = () => {
                 <p>price: {el.price}</p>
                 <p>description: {el.description}</p>
 
-                <button>edit</button>
-                <button type="button" onClick={() => {handleDelete(el.id)}}>
+                <button style={{ marginRight: "10px" }}>edit</button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    handleDelete(el.id);
+                  }}
+                >
                   Delete
                 </button>
               </div>
