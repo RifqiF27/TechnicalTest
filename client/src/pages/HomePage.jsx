@@ -63,18 +63,21 @@ const HomePage = () => {
       <div style={{ margin: "15px" }}>
         <div style={{ marginBottom: "10px" }}>
           <input placeholder="Search..." onChange={handleSearch}></input>
-          <button  type="button" onClick={handleSubmitSearch}>
+          <button type="button" onClick={handleSubmitSearch}>
             Search
           </button>
         </div>
         <div>
-          <Link to={"/addProduct"}
-            style={{
-              margin: "10px",
-            }}
-          >
-            Add
-          </Link>
+          <button  style={{
+                margin: "10px",
+              }}>
+            <Link
+              to={"/addProduct"}
+             
+            >
+              Add
+            </Link>
+          </button>
         </div>
         {!loading && products.length === 0 && <p>product tidak ditemukan</p>}
         {loading ? (
